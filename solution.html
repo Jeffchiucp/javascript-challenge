@@ -1,0 +1,29 @@
+<html>
+  <body>
+    <script type="text/javascript" src="./library.js"></script>
+    <script type="text/javascript">
+      // Clicking the INCREMENT button should display counter by 1
+      // Clicking the DECREMENT button should decrease it by 1
+
+      let increment = window.generateChangeHandler(1).bind(window.getCounterNode())
+      let decrement = window.generateChangeHandler(-1).bind(window.getCounterNode())
+      console.log(this);
+      console.log(increment);
+      console.log(decrement);
+      window.attachHandlers(increment, decrement)
+
+      //pass it through the context
+      var value = Number.parseInt(window.getCounterNode().innerText)
+      function adjustValue(amount){
+        value += amount;
+      }
+
+
+      //console.log(window.attachHandlers(increment, decrement))
+      // *** Constraints:
+      // Cannot modify library.js
+      // Cannot access DOM directly
+
+    </script>
+  </body>
+</html>
